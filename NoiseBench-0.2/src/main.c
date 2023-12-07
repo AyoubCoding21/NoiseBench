@@ -8,9 +8,8 @@
 #include <GL/glxew.h>
 
 #define NAME "NoiseBench"
-int WIDTH = 1280;  
-int HEIGHT = 1024;
-double timet = 0, timebase = 0, fps = 0, frame = 0;
+int WIDTH = 480;  
+int HEIGHT = 240;
 
 GLuint vert, frag, program;
 
@@ -246,9 +245,9 @@ static double computeFPS()
 
     // Get current time
     t = glutGet(GLUT_ELAPSED_TIME);  // Gets number of seconds since glfwInit()
-    if( (t-t0) > 1000 || frames == 0 )
+    if( (t-t0) > 1.0 || frames == 0 )
     {
-        fps = (double)frames * 1000 / (t-t0);
+        fps = (double)frames / (t-t0);
         Msamplespersecond = 1e-6*fps*WIDTH*HEIGHT;
         sprintf(titlestring, "NoiseBench (%.6Lf M samples/s, %.7f FPS)", Msamplespersecond, fps);
         glutSetWindowTitle(titlestring);
