@@ -8,8 +8,8 @@
 #include <GL/glxew.h>
 
 #define NAME "NoiseBench"
-int WIDTH = 480;  
-int HEIGHT = 240;
+int WIDTH = 1920;
+int HEIGHT = 1080;
 
 GLuint vert, frag, program;
 
