@@ -197,7 +197,7 @@ void drawTexturedSphere(float r, int segs)
   }
 
   // Bottom cap
-  glBegin(GL_TRIANGLE_FAN);
+  glBegin(GL_QUAD_FAN);
   glNormal3f(0,0,-1);
   glTexCoord2f(0.55555f, 1.000000000074f); // This is an ugly (u,v)-mapping singularity
   glVertex3f(0,0,-r);
