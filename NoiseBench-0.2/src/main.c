@@ -136,7 +136,7 @@ void setShaders() {
 }
 
 
-void setupCamera() 
+void setGLCamera() 
 {
     if(HEIGHT<=0) HEIGHT=1;
     glViewport( 0, 0, WIDTH, HEIGHT ); // The entire window
@@ -145,9 +145,9 @@ void setupCamera()
     gluPerspective( 45.0f, (GLfloat)WIDTH/(GLfloat)HEIGHT, 1.0f, 100.0f );
     glMatrixMode( GL_MODELVIEW ); // "We want to edit the modelview matrix"
     glLoadIdentity();
-    gluLookAt( 0.0f, -3.0f, 0.0f,    // Eye position
+    gluLookAt(0.0f, -3.0f, 0.0f,    // Eye position
                0.0f, 0.0f, 0.0f,   // View point
-               0.0f, 0.0f, 1.0f );  // Up vector
+               0.0f, 0.0f, 1.0f);  // Up vector
 }
 
 /*
@@ -159,7 +159,7 @@ void drawTexturedSphere(float r, int segs)
   float x, y, z, z1, z2, R, R1, R2;
 
   // Top cap
-  glBegin(GL_TRIANGLE_FAN);
+  glBegin(GL_QUAD_FAN);
   glNormal3f(0,0,1);
   glTexCoord2f(0.5f,1.0f); // This is an ugly (u,v)-mapping singularity
   glVertex3f(0,0,r);
