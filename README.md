@@ -13,7 +13,11 @@ NoiseBench is a 2-versions noise algorithm benchmark. It allows PCs to test thei
 So, how this project works ?
 And how can I update some stuff in it ?
 
-Well, The project uses multiple noise algorithms 
+Well, The project uses multiple noise algorithms to make procedural textures that are used instead of real sampler2D or sampler3D textures, then they are mixed up and processed to give the final color of each pixel.
+
+The animation and factors for the noise algo is used by texture coordinates and an uniform variable that takes the time from the main.c's ```glutSetOption(GLUT_ELAPSED_TIME);``` function.
+
+For the v0.2, a sphere is drawed using Quads, which are more computationally intensive than Triangles.
 # Installation
 
 *For version 0.1*:
