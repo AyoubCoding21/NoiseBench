@@ -41,4 +41,6 @@ cd NoiseBench/NoiseBench-0.2/
 make
 ```
 
+# Conclusion
+So I hope you enjoyed the benchmark, please tell me your FPS in the following email : ayoubprogramming96@outlook.com, That helps us improve the benchmark, And for donating, contact me at the same e-mail.
 # ***ENJOY !!!!***
