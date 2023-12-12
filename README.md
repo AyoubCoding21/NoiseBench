@@ -18,6 +18,9 @@ Well, The project uses multiple noise algorithms to make procedural textures tha
 The animation and factors for the noise algo is used by texture coordinates and an uniform variable that takes the time from the main.c's ```glutSetOption(GLUT_ELAPSED_TIME);``` function.
 
 For the v0.2, a sphere is drawed using Quads, which are more computationally intensive than Triangles.
+
+Then a fire noise (kinda like the Sun surface) is generated using 4 different noise types : cellular, simplex (normal and gradient), and classic Perlin noise then processed and added to fire color and then pushed to ```gl_FragColor```.
+
 # Installation
 
 *For version 0.1*:
