@@ -21,6 +21,8 @@ For the v0.2, a sphere is drawed using Quads, which are more computationally int
 
 Then a fire noise (kinda like the Sun surface) is generated using 4 different noise types : cellular, simplex (normal and gradient), and classic Perlin noise then processed and added to fire color and then pushed to ```gl_FragColor```.
 
+For FPS measuring, they measure the FPS like in ElectroBench, but they calculate sampling rate also (in MSamples/s). And they output it to the title and the console.
+
 # Installation
 
 *For version 0.1*:
@@ -42,5 +44,7 @@ make
 ```
 
 # Conclusion
+
 So I hope you enjoyed the benchmark, please tell me your FPS in the following email : ayoubprogramming96@outlook.com, That helps us improve the benchmark, And for donating, contact me at the same e-mail.
+
 # ***ENJOY !!!!***
