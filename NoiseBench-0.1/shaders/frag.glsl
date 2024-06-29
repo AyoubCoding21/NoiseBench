@@ -598,7 +598,7 @@ float cnoise(vec2 P)
   return 2.3 * n_xy;
 }
 
-float gnoise(vec3 v, out vec3 gradient)
+float gnoise(vec3 v)
 {
   const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
   const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
@@ -672,12 +672,6 @@ float gnoise(vec3 v, out vec3 gradient)
   vec4 m4 = m2 * m2;
   vec4 pdotx = vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3));
 
-// Determine noise gradient
-  vec4 temp = m2 * m * pdotx;
-  gradient = -8.0 * (temp.x * x0 + temp.y * x1 + temp.z * x2 + temp.w * x3);
-  gradient += m4.x * p0 + m4.y * p1 + m4.z * p2 + m4.w * p3;
-  gradient *= 105.0;
-
   return 105.0 * dot(m4, pdotx);
 }
 
@@ -685,7 +679,7 @@ float gnoise(vec3 v, out vec3 gradient)
 void main(void)
 {
   float n = sfnoise(v_texCoord4D) + snoise(v_texCoord3D) + 
-  cnoise(v_texCoord2D) + cnoise(v_texCoord4D) + gnoise(v_texCoord3D, vec3(time)) +
+  cnoise(v_texCoord2D) + cnoise(v_texCoord4D) + gnoise(v_texCoord3D) +
   cellular(v_texCoord2D).x +
   cellular(v_texCoord3D).x;
   gl_FragColor = vec4(vec3(n * 0.5 + 0.5), 1.0);

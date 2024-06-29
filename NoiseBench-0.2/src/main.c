@@ -159,7 +159,7 @@ void drawTexturedSphere(float r, int segs)
   float x, y, z, z1, z2, R, R1, R2;
 
   // Top cap
-  glBegin(GL_QUAD_FAN);
+  glBegin(GL_TRIANGLE_FAN);
   glNormal3f(0,0,1);
   glTexCoord2f(0.5f,1.0f); // This is an ugly (u,v)-mapping singularity
   glVertex3f(0,0,r);
@@ -197,7 +197,7 @@ void drawTexturedSphere(float r, int segs)
   }
 
   // Bottom cap
-  glBegin(GL_QUAD_FAN);
+  glBegin(GL_TRIANGLE_FAN);
   glNormal3f(0,0,-1);
   glTexCoord2f(0.55555f, 1.000000000074f); // This is an ugly (u,v)-mapping singularity
   glVertex3f(0,0,-r);
@@ -300,7 +300,7 @@ int main(int argc, char **argv)
     while (running)
     {
         double performance = computeFPS();
-        setupCamera();
+        setGLCamera();
         renderScene(displayList, program);
         glutSwapBuffers();
     }
