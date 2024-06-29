@@ -1,6 +1,6 @@
 # NoiseBench
 
-NoiseBench is a 2-versions noise sampling algorithm benchmark. It allows PCs to test their sampling performances, It is based off ashima/webgl-noise's benchmark and demo but a bit more intense on their hosts. This project is available for Debian-based Linux PCs only.
+NoiseBench is a 2-versions noise sampling algorithm benchmark. It allows PCs to test their sampling performances, It is based off ashima/webgl-noise's benchmark and demo but a bit more intense on their hosts and modified to use GLUT. This project is available for Debian-based Linux PCs only.
 
 # Terms used here
 
